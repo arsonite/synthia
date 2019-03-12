@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "utility/logger.h"
+
 #include <QMainWindow>
 
 namespace Ui {
@@ -16,7 +18,9 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui_;
+
+    Logger lg;
 };
 
 #endif // MAINWINDOW_H

@@ -28,12 +28,14 @@ CONFIG += c++17
 SOURCES += \
         main.cpp \
         view/mainwindow.cpp \
+        utility/logger.cpp \
 
 HEADERS += \
-        view/mainwindow.h
+        view/mainwindow.h \
+        utility/logger.h \
 
 FORMS += \
-        view/mainwindow.ui
+        view/mainwindow.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -45,3 +47,8 @@ SUBDIRS += \
 
 RESOURCES += \
     _res/ressources.qrc
+
+DISTFILES += \
+    README.md \
+    LICENSE \
+    profile.ini

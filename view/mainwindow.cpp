@@ -1,14 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
+#include <QStandardPaths>
+
+MainWindow::MainWindow(QWidget *parent):
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui_(new Ui::MainWindow),
+    lg(Logger("MainWindow"))
 {
-    ui->setupUi(this);
+    ui_->setupUi(this);
+
+    lg.log("Started up MainWindow with Application-Path: " + QString(getenv("APPDATA")));
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+    delete ui_;
 }
