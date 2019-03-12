@@ -10,6 +10,8 @@ A **cross-platform**, **light-weight**, ~~stylish~~ music- & podcast player.
 - Saving playstate of podcast
 - Drag- & Drop to add/remove albums/songs
 
+***
+
 ### License
 
 **MIT License**
