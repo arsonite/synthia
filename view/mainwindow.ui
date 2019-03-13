@@ -131,7 +131,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QGraphicsView" name="view"/>
+       <widget class="QListWidget" name="list"/>
       </item>
      </layout>
     </item>

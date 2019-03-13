@@ -8,6 +8,8 @@
 #include <QKeyEvent>
 #include <QDragEnterEvent>
 #include <QDropEvent>
+#include <QListWidgetItem>
+#include <QMediaPlayer>
 
 namespace Ui {
 class MainWindow;
@@ -37,6 +39,8 @@ private slots:
     void on_maximize_clicked();
     void on_close_clicked();
 
+    void on_list_itemClicked(QListWidgetItem *item);
+
 private:
     Logger lg;
 
@@ -44,6 +48,8 @@ private:
     MainController *controller_;
 
     QPoint pos_;
+
+    QMediaPlayer *player_;
 
     bool maximized_;
 };

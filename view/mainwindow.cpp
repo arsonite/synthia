@@ -1,24 +1,27 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "view/clickableqlabel.h"
 
 #include <QSizeGrip>
 #include <QStandardPaths>
 #include <QMimeData>
+#include <QDirIterator>
+#include <QStringList>
 
 MainWindow::MainWindow(QWidget *parent):
     QMainWindow(parent),
     ui_(new Ui::MainWindow),
     lg(Logger("MainWindow"))
 {
+    player_ = new QMediaPlayer(this);
 
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     setAcceptDrops(true);
 
     ui_->setupUi(this);
 
-    ui_->view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui_->view->setAlignment(Qt::AlignTop | Qt::AlignLeft);
-    ui_->view->setStyleSheet(QString("border: none; background-color: #%1;").arg("353535"));
+    ui_->list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui_->list->setStyleSheet(QString("color: #fff; border: none; background-color: #%1;").arg("353535"));
 
     ui_->central->setStyleSheet(QString("background-color: #%1;").arg("353535"));
 
@@ -71,16 +74,27 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *e)
 
 void MainWindow::dropEvent(QDropEvent *e)
 {
-    QList<QUrl> droppedUrls = e->mimeData()->urls();
-    int count = droppedUrls.size();
-    lg.log(QString::number(count));
+    QString soundExt[2] = {"wav", "mp3"};
+    QString imgExt[3] = {"jpg", "jpeg", "png"};
 
-    // TODO: Implement tree traversal algorithm in case a folder gets dropped into window instead of multiple files or singular file
+    QList<QUrl> urls = e->mimeData()->urls();
+    int count = urls.size();
 
-    for(QUrl &url : droppedUrls) {
-        QString fileName = url.toLocalFile();
-        if(fileName.contains(".wav") || fileName.contains(".mp3")) {
-            lg.log(fileName);
+    // TODO: Implement recursive tree traversal algorithm in case a folder gets dropped into window instead of multiple files or singular file
+    if(count == 1 && !urls.first().toLocalFile().contains(soundExt[0]) && !urls.first().toLocalFile().contains(soundExt[1])) {
+        QDirIterator it(urls.first().toLocalFile());
+        while (it.hasNext()) {
+           auto entry = it.next().replace(QRegExp(".*/"), "");
+           QListWidgetItem *item = new QListWidgetItem(entry);
+           item->setStatusTip(it.next());
+           ui_->list->addItem(item);
+        }
+    } else {
+        for(QUrl &url : urls) {
+            QString fileName = url.toLocalFile();
+            if(fileName.contains(".wav") || fileName.contains(".mp3")) {
+                lg.log(fileName);
+            }
         }
     }
 }
@@ -104,4 +118,12 @@ void MainWindow::on_maximize_clicked()
 void MainWindow::on_close_clicked()
 {
     close();
+}
+
+void MainWindow::on_list_itemClicked(QListWidgetItem *item)
+{
+    player_->setMedia(QUrl::fromLocalFile(item->statusTip()));
+    player_->setVolume(100);
+    player_->play();
+    lg.log("Now playing... " + item->text());
 }

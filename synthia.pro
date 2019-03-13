@@ -30,13 +30,13 @@ SOURCES += \
         view/mainwindow.cpp \
         utility/logger.cpp \
         controller/maincontroller.cpp \
-    view/clickableqlabel.cpp
+        view/clickableqlabel.cpp
 
 HEADERS += \
         view/mainwindow.h \
         utility/logger.h \
         controller/maincontroller.h \
-    view/clickableqlabel.h
+        view/clickableqlabel.h
 
 FORMS += \
         view/mainwindow.ui \
