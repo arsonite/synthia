@@ -47,6 +47,9 @@
          </size>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -61,6 +64,9 @@
          </property>
          <item>
           <layout class="QHBoxLayout" name="hotbar">
+           <property name="spacing">
+            <number>0</number>
+           </property>
            <property name="leftMargin">
             <number>0</number>
            </property>

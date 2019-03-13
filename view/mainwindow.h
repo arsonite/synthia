@@ -6,6 +6,8 @@
 
 #include <QMainWindow>
 #include <QKeyEvent>
+#include <QDragEnterEvent>
+#include <QDropEvent>
 
 namespace Ui {
 class MainWindow;
@@ -24,8 +26,11 @@ public:
     void keyReleaseEvent(QKeyEvent *e) override;
 
 protected:
-    void mousePressEvent(QMouseEvent *e);
-    void mouseMoveEvent(QMouseEvent *e);
+    void mousePressEvent(QMouseEvent *e) override;
+    void mouseMoveEvent(QMouseEvent *e) override;
+
+    void dragEnterEvent(QDragEnterEvent *e) override;
+    void dropEvent(QDropEvent *e) override;
 
 private slots:
     void on_minimize_clicked();
