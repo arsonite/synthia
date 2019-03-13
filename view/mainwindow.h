@@ -25,16 +25,22 @@ public:
 
 protected:
     void mousePressEvent(QMouseEvent *e);
-
     void mouseMoveEvent(QMouseEvent *e);
 
-private:
-    Ui::MainWindow *ui_;
+private slots:
+    void on_minimize_clicked();
+    void on_maximize_clicked();
+    void on_close_clicked();
 
-    MainController *controller_;
+private:
     Logger lg;
 
-    QPoint pos;
+    Ui::MainWindow *ui_;
+    MainController *controller_;
+
+    QPoint pos_;
+
+    bool maximized_;
 };
 
 #endif // MAINWINDOW_H

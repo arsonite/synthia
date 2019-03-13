@@ -47,12 +47,33 @@ void MainWindow::keyReleaseEvent(QKeyEvent *e)
 
 void MainWindow::mousePressEvent(QMouseEvent *e)
 {
-    pos = e->globalPos();
+    pos_ = e->globalPos();
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent *e)
 {
-    const QPoint delta = e->globalPos() - pos;
+    const QPoint delta = e->globalPos() - pos_;
     move(x()+delta.x(), y()+delta.y());
-    pos = e->globalPos();
+    pos_ = e->globalPos();
+}
+
+void MainWindow::on_minimize_clicked()
+{
+    setWindowState(Qt::WindowState::WindowMinimized);
+}
+
+void MainWindow::on_maximize_clicked()
+{
+    if(!maximized_) {
+        setWindowState(Qt::WindowState::WindowMaximized);
+        maximized_ = true;
+        return;
+    }
+    setWindowState(Qt::WindowState::WindowNoState);
+    maximized_ = false;
+}
+
+void MainWindow::on_close_clicked()
+{
+    close();
 }
