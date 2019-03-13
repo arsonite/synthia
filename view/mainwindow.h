@@ -23,11 +23,18 @@ public:
     void keyPressEvent(QKeyEvent *e) override;
     void keyReleaseEvent(QKeyEvent *e) override;
 
+protected:
+    void mousePressEvent(QMouseEvent *e);
+
+    void mouseMoveEvent(QMouseEvent *e);
+
 private:
     Ui::MainWindow *ui_;
 
     MainController *controller_;
     Logger lg;
+
+    QPoint pos;
 };
 
 #endif // MAINWINDOW_H

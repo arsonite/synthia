@@ -44,3 +44,15 @@ void MainWindow::keyReleaseEvent(QKeyEvent *e)
 {
     controller_->KeyReleased(e);
 }
+
+void MainWindow::mousePressEvent(QMouseEvent *e)
+{
+    pos = e->globalPos();
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *e)
+{
+    const QPoint delta = e->globalPos() - pos;
+    move(x()+delta.x(), y()+delta.y());
+    pos = e->globalPos();
+}
