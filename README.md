@@ -12,6 +12,15 @@ A **cross-platform**, **light-weight**, ~~stylish~~ music- & podcast player.
 
 ***
 
+### To-Do
+
+- Create a backend version of the code
+- Transfer the frontend of the web-version to CSS and JavaScript and convert the current code to only utilize backend-functionality
+- Enable uploading and playing music through cloud services onto my server
+- Use FileSystem-API of Node to manage music-files
+
+***
+
 ### License
 
 **MIT License**
