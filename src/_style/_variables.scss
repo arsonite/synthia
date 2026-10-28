@@ -1,0 +1,45 @@
+/**
+ * Copyright (c) 2026. All rights reserved.
+ *
+ * Spotify Library Manager
+ * Design tokens. Injected globally via vite.config.ts (additionalData),
+ * so every .scss file can use these without importing them.
+ */
+
+// Surfaces
+$default-black: #0d0f14;
+$default-panel: #14161d;
+$default-elevated: #1b1e27;
+$default-hover: #222633;
+$default-border: #2a2f3c;
+
+// Text
+$default-white: #f2f4f8;
+$default-dim: #8b93a4;
+$default-faint: #5c6373;
+
+// Accents
+$default-green: #3fd67e;
+$default-green-bright: #5ce094;
+$default-green-soft: rgba(63, 214, 126, 0.14);
+$default-blue: #7c8bff;
+$default-blue-bright: #97a2ff;
+$default-blue-soft: rgba(124, 139, 255, 0.16);
+$default-red: #e5484d;
+$default-red-soft: rgba(229, 72, 77, 0.16);
+$default-yellow: #e2b93b;
+
+// Layout
+$default-sidebar-width: 19rem;
+$default-chat-width: 23rem;
+$default-frame-padding: 1rem;
+$default-border-radius: 0.75rem;
+$default-border-radius-small: 0.45rem;
+
+// Motion
+$default-transition: 0.15s ease;
+$default-transition-slow: 0.3s ease;
+
+// Type
+$default-font-display: 'Space Grotesk', 'Inter', sans-serif;
+$default-font-body: 'Inter', system-ui, sans-serif;

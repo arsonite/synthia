@@ -1,0 +1,160 @@
+/**
+ * Copyright (c) 2026. All rights reserved.
+ *
+ * Spotify Library Manager
+ * Global reset, base typography and scrollbar styling.
+ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    background-color: $default-black;
+    color: $default-white;
+    font-family: $default-font-body;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $default-font-display;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    gap: 0.5rem;
+}
+
+h3 {
+    font-size: 1.05rem;
+}
+
+a {
+    color: $default-green;
+    text-decoration: none;
+}
+
+code {
+    background-color: $default-elevated;
+    border-radius: $default-border-radius-small;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 0.8em;
+    padding: 0.1rem 0.35rem;
+}
+
+input,
+select,
+textarea,
+button {
+    background-color: $default-elevated;
+    border: 1px solid $default-border;
+    border-radius: $default-border-radius-small;
+    color: $default-white;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    padding: 0.4rem 0.6rem;
+    transition: border-color $default-transition;
+
+    &:focus {
+        border-color: $default-blue;
+    }
+
+    &::placeholder {
+        color: $default-faint;
+    }
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+// Scrollbars
+* {
+    scrollbar-color: $default-border transparent;
+    scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $default-border;
+    border-radius: 1rem;
+
+    &:hover {
+        background-color: $default-faint;
+    }
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+// The signature element of the app: release date chips
+.release-chip {
+    background-color: $default-elevated;
+    border: 1px solid $default-border;
+    border-radius: 1rem;
+    color: $default-dim;
+    display: inline-block;
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    padding: 0.1rem 0.5rem;
+    white-space: nowrap;
+
+    // The precision tells the user how much to trust the date
+    &.precision-day {
+        border-color: rgba(63, 214, 126, 0.45);
+        color: $default-green;
+    }
+
+    &.precision-month {
+        border-color: rgba(226, 185, 59, 0.4);
+        color: $default-yellow;
+    }
+
+    &.precision-year,
+    &.precision-unknown {
+        color: $default-faint;
+    }
+}
+
+#error-boundary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 3rem;
+
+    button {
+        align-self: flex-start;
+        cursor: pointer;
+    }
+}

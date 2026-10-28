@@ -1,0 +1,52 @@
+/**
+ * Copyright (c) 2026. All rights reserved.
+ *
+ * Spotify Library Manager
+ */
+
+.popup-backdrop {
+    align-items: center;
+    backdrop-filter: blur(2px);
+    background-color: rgba(13, 15, 20, 0.7);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+}
+
+.popup {
+    background-color: $default-panel;
+    border: 1px solid $default-border;
+    border-radius: $default-border-radius;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 28rem;
+    padding: 1.25rem;
+    width: calc(100% - 2rem);
+
+    &.warning .popup-header {
+        color: $default-yellow;
+    }
+
+    .popup-header {
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .popup-body {
+        color: $default-dim;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .popup-actions {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: flex-end;
+    }
+}

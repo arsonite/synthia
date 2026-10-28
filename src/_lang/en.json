@@ -1,0 +1,256 @@
+{
+    "client": {
+        "library-failed": "Could not load your library. Check the connection and try again.",
+        "loading-library": "Loading your library ...",
+        "open-chat": "Open the assistant"
+    },
+    "login": {
+        "title": "Spotify Library Manager",
+        "subtitle": "Organize your own library: virtual folders, mass actions, release dates and a weekly archive.",
+        "client-id-label": "Spotify client ID",
+        "client-id-placeholder": "e.g. 4c1f8a2be9d34e0f...",
+        "client-id-hint": "Create an app in the Spotify Developer Dashboard and paste its client ID here. It is stored locally only.",
+        "client-id-missing": "Please enter a client ID first.",
+        "redirect-hint": "Register this redirect URI in the dashboard:",
+        "connect-button": "Connect Spotify account",
+        "login-failed": "Could not start the login flow."
+    },
+    "callback": {
+        "connecting": "Completing the connection ...",
+        "denied": "Access was denied.",
+        "exchange-failed": "Could not exchange the authorization code."
+    },
+    "home": {
+        "welcome": "Hello {{name}}",
+        "subtitle": "Your library at a glance.",
+        "stats": {
+            "playlists": "Playlists",
+            "own": "Own",
+            "public": "Public",
+            "folders": "Folders"
+        },
+        "dw": {
+            "title": "Archive Discover Weekly",
+            "description-text": "Copies the current Discover Weekly into a playlist named after the calendar week and files it into \"{{folder}}\".",
+            "button": "Archive now",
+            "archiving": "Archiving ...",
+            "archived": "Created {{name}} with {{count}} tracks.",
+            "already-archived": "{{name}} already exists, nothing to do.",
+            "failed": "The archive run failed.",
+            "description": "Archived from {{source}} by Spotify Library Manager.",
+            "source-not-found": "Discover Weekly was not found in your library. Set a source playlist ID in the settings.",
+            "source-empty": "The source playlist contains no playable tracks.",
+            "override-failed": "The configured source playlist could not be loaded (status {{status}})."
+        },
+        "limitations": {
+            "title": "Two things the Spotify API cannot do",
+            "folders": "Spotify offers no public endpoints for playlist folders or the sidebar order. Folders and the custom order in this app are therefore stored locally in your browser and are not visible in the Spotify clients.",
+            "dw": "Since late 2024 algorithmic playlists such as Discover Weekly are only accessible to apps with an approved quota extension. If the archive run reports a missing source, point it at a mirror playlist of your own in the settings."
+        },
+        "settings": {
+            "title": "Settings",
+            "language": "Language",
+            "dw-source": "Discover Weekly source ID",
+            "dw-source-placeholder": "Playlist ID (optional)",
+            "dw-source-hint": "Optional override, used when Discover Weekly is not readable through the API.",
+            "ws-url": "Assistant WebSocket URL",
+            "account": "Account",
+            "logout": "Disconnect"
+        }
+    },
+    "sidebar": {
+        "title": "Your library",
+        "loading": "Loading playlists ...",
+        "filter-placeholder": "Filter playlists",
+        "filter-empty": "No playlist matches the filter.",
+        "root-dropzone": "Drop here to move to the top level",
+        "select-tooltip": "Select for mass actions",
+        "drag-subtitle": "{{count}} tracks",
+        "actions": {
+            "archive-dw": "Archive Discover Weekly",
+            "new-folder": "New folder",
+            "refresh": "Reload library"
+        },
+        "folder": {
+            "new-name": "New folder",
+            "delete-tooltip": "Delete folder",
+            "delete-header": "Delete folder",
+            "delete-body": "\"{{name}}\" will be removed. The playlists inside move up one level and stay in Spotify."
+        }
+    },
+    "playlist": {
+        "loading": "Loading tracks ...",
+        "empty": "This playlist has no tracks.",
+        "load-failed": "Could not load the playlist.",
+        "public": "Public",
+        "private": "Private",
+        "by-owner": "by {{owner}}",
+        "track-count": "{{count}} tracks",
+        "local": "Local",
+        "row-tooltip": "Click for other releases of this track, drag into the assistant",
+        "refresh": "Reload tracks",
+        "open-in-spotify": "Open in Spotify",
+        "toggle-direction": "Reverse the sort direction",
+        "apply-order": "Write order",
+        "applying-order": "Writing ...",
+        "apply-order-tooltip": "Write the current sort order back to Spotify",
+        "apply-order-header": "Write order to Spotify",
+        "apply-order-body": "The track order of \"{{name}}\" will be overwritten with the current sort order. This cannot be undone.",
+        "order-applied": "The order was written to Spotify.",
+        "order-failed": "The order could not be written.",
+        "order-skipped-local": "{{count}} local files were skipped, the API cannot re-add them.",
+        "columns": {
+            "title": "Title",
+            "album": "Album",
+            "release": "Release",
+            "added": "Added",
+            "duration": "Time"
+        },
+        "sort": {
+            "custom": "Custom order",
+            "title": "Title",
+            "artist": "Artist",
+            "album": "Album",
+            "release-date": "Release date",
+            "added": "Date added",
+            "duration": "Duration",
+            "popularity": "Popularity"
+        },
+        "precision": {
+            "day": "Exact date",
+            "month": "Month only",
+            "year": "Year only",
+            "unknown": "No date"
+        },
+        "order-applied-with-backup": "The order was written to Spotify, a backup of the previous order is on the home view.",
+        "order-failed-restorable": "The order write failed and the playlist may be incomplete. Restore the snapshot from the home view."
+    },
+    "variants": {
+        "title": "Other releases",
+        "close": "Close",
+        "explainer": "Singles, albums, remasters and compilations of this track. Green chips carry an exact date, yellow only a month, gray only a year. Replacing keeps the position in the playlist.",
+        "loading": "Searching releases ...",
+        "empty": "No other releases were found.",
+        "search-failed": "The release search failed.",
+        "current": "In playlist",
+        "replace": "Use",
+        "replacing": "Replacing ...",
+        "replace-tooltip": "Replace the track in this playlist with this release",
+        "replaced": "Replaced, the release date is now {{date}}.",
+        "replace-failed": "The track could not be replaced.",
+        "precision": {
+            "day": "Exact date",
+            "month": "Month only",
+            "year": "Year only",
+            "unknown": "No date"
+        },
+        "album-type": {
+            "album": "Album",
+            "single": "Single",
+            "compilation": "Compilation",
+            "appears_on": "Appears on"
+        },
+        "replace-failed-restorable": "The track could not be replaced. If the playlist looks wrong, restore the snapshot from the home view."
+    },
+    "toolbar": {
+        "selected": "{{count}} selected",
+        "clear": "Clear selection",
+        "make-public": "Public",
+        "make-private": "Private",
+        "move-to-folder": "Move",
+        "made-public": "{{count}} playlists are now public.",
+        "made-private": "{{count}} playlists are now private.",
+        "skipped-not-owned": "{{count}} playlists were skipped, they belong to someone else.",
+        "visibility-failed": "Could not change \"{{name}}\".",
+        "visibility-backup-label": "Visibility of {{count}} playlists"
+    },
+    "folder-picker": {
+        "header": "Move to folder",
+        "root": "Top level",
+        "new-folder-placeholder": "New folder name",
+        "create-tooltip": "Create folder",
+        "cancel": "Cancel",
+        "move-here": "Move here"
+    },
+    "chat": {
+        "title": "Assistant",
+        "connect": "Connect",
+        "connecting": "Connecting",
+        "disconnect": "Disconnect",
+        "close": "Close",
+        "send": "Send",
+        "ws-url": "WebSocket URL",
+        "settings-tooltip": "Connection settings",
+        "input-placeholder": "Ask something, Enter sends, Shift plus Enter adds a line",
+        "empty-title": "No messages yet",
+        "empty-hint": "Drag playlists, tracks or releases in here to attach their metadata.",
+        "not-connected": "Not connected to a backend.",
+        "send-failed": "The message could not be sent.",
+        "backend-error": "Backend error: {{text}}",
+        "status": {
+            "disconnected": "Offline",
+            "connecting": "Connecting",
+            "connected": "Online"
+        },
+        "attachment": {
+            "load-failed": "Could not load the metadata for \"{{name}}\"."
+        }
+    },
+    "popup": {
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "close": "Close"
+    },
+    "backup": {
+        "title": "Backup and recovery",
+        "description": "A snapshot of the affected playlists is taken automatically before every write that changes them. Download a full backup as well, since the folder tree only lives in this browser.",
+        "download": "Download full backup",
+        "restore-from-file": "Restore from file",
+        "downloaded": "Backup of {{count}} playlists downloaded.",
+        "download-failed": "The backup could not be created.",
+        "file-invalid": "That file is not a backup of this app.",
+        "preview-failed": "The comparison with your live library failed.",
+        "restore": "Restore",
+        "restore-tooltip": "Write this snapshot back to Spotify",
+        "save-tooltip": "Save this snapshot as a file",
+        "delete-tooltip": "Delete this snapshot",
+        "restored": "{{playlists}} playlists and {{tracks}} tracks restored.",
+        "restored-skipped-local": "{{count}} local files could not be re-added by the API.",
+        "restore-failed": "The restore failed.",
+        "restore-entry-failed": "\"{{name}}\" was not restored ({{message}}).",
+        "automatic-title": "Automatic snapshots",
+        "automatic-hint": "The last 20 snapshots are kept in this browser. Save the ones that matter as a file.",
+        "automatic-empty": "No snapshots yet, they appear after the first write.",
+        "snapshot-size": "{{playlists}} playlists, {{tracks}} tracks",
+        "reason": {
+            "order-write": "Order write",
+            "track-replace": "Track swap",
+            "visibility": "Visibility",
+            "pre-restore": "Pre-restore",
+            "manual": "Manual"
+        },
+        "state": {
+            "same": "Unchanged",
+            "changed": "Differs",
+            "missing": "Gone"
+        },
+        "counts": {
+            "tracks": "{{live}} now, {{backup}} in backup",
+            "missing": "not in library"
+        },
+        "working": {
+            "capturing": "Reading playlists {{done}} of {{total}} ...",
+            "comparing": "Comparing with your library ...",
+            "restoring": "Restoring {{done}} of {{total}} ..."
+        },
+        "confirm": {
+            "header": "Restore this backup",
+            "body": "\"{{label}}\" will be written back to Spotify. Playlists marked as differing are overwritten with the backed-up order.",
+            "note": "A snapshot of the current state is taken first, so this restore can itself be undone. Local files cannot be re-added, and restored tracks count as added today."
+        },
+        "delete": {
+            "header": "Delete snapshot",
+            "body": "The snapshot \"{{label}}\" will be removed. This does not touch Spotify."
+        }
+    }
+}

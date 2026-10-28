@@ -1,0 +1,346 @@
+/**
+ * Copyright (c) 2026. All rights reserved.
+ *
+ * Spotify Library Manager
+ */
+
+#playlist-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#playlist-header {
+    align-items: flex-start;
+    border-bottom: 1px solid $default-border;
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+#playlist-cover {
+    border-radius: $default-border-radius-small;
+    flex-shrink: 0;
+    height: 5rem;
+    object-fit: cover;
+    width: 5rem;
+
+    &.placeholder {
+        align-items: center;
+        background-color: $default-elevated;
+        color: $default-faint;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#playlist-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+#playlist-subline {
+    align-items: center;
+    color: $default-dim;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    gap: 0.75rem;
+    margin-top: 0.35rem;
+}
+
+.visibility-badge {
+    align-items: center;
+    border: 1px solid $default-border;
+    border-radius: 1rem;
+    display: inline-flex;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+    padding: 0.1rem 0.5rem;
+
+    &.public {
+        border-color: rgba(63, 214, 126, 0.4);
+        color: $default-green;
+    }
+
+    &.private {
+        color: $default-dim;
+    }
+}
+
+#playlist-description {
+    color: $default-faint;
+    font-size: 0.8rem;
+    margin-top: 0.35rem;
+}
+
+#playlist-actions {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.4rem;
+}
+
+#playlist-sort {
+    align-items: center;
+    background-color: $default-elevated;
+    border: 1px solid $default-border;
+    border-radius: $default-border-radius-small;
+    color: $default-dim;
+    display: flex;
+    gap: 0.35rem;
+    padding-left: 0.5rem;
+
+    select {
+        background: none;
+        border: none;
+        padding: 0.35rem 0.25rem;
+    }
+}
+
+#playlist-table {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem 1rem 4rem;
+}
+
+.playlist-hint {
+    color: $default-faint;
+    padding: 1.5rem 0.5rem;
+}
+
+.track-row {
+    align-items: center;
+    border-radius: $default-border-radius-small;
+    cursor: pointer;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 2.25rem minmax(12rem, 2.4fr) minmax(8rem, 1.4fr) 6.5rem 6rem 3.5rem;
+    padding: 0.35rem 0.6rem;
+    transition: background-color $default-transition;
+
+    &:hover {
+        background-color: $default-hover;
+    }
+
+    &.active {
+        background-color: $default-blue-soft;
+    }
+
+    &.header {
+        color: $default-faint;
+        cursor: default;
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        position: sticky;
+        text-transform: uppercase;
+        top: 0;
+        z-index: 5;
+        background-color: $default-black;
+
+        &:hover {
+            background-color: $default-black;
+        }
+    }
+
+    .col-index {
+        color: $default-faint;
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+    }
+
+    .col-title {
+        align-items: center;
+        display: flex;
+        gap: 0.6rem;
+        min-width: 0;
+    }
+
+    .col-album,
+    .col-added,
+    .col-duration {
+        color: $default-dim;
+        font-size: 0.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .col-duration {
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+    }
+}
+
+.track-cover {
+    border-radius: 0.2rem;
+    flex-shrink: 0;
+    height: 2.1rem;
+    object-fit: cover;
+    width: 2.1rem;
+
+    &.placeholder {
+        align-items: center;
+        background-color: $default-elevated;
+        color: $default-faint;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.track-title-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.track-name {
+    align-items: center;
+    display: flex;
+    gap: 0.35rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.track-artist {
+    color: $default-dim;
+    font-size: 0.76rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.explicit-tag,
+.local-tag {
+    border: 1px solid $default-border;
+    border-radius: 0.2rem;
+    color: $default-faint;
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    line-height: 1.4;
+    padding: 0 0.2rem;
+}
+
+// Variants panel
+#variants-panel {
+    background-color: $default-panel;
+    border-top: 1px solid $default-border;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 55%;
+    padding: 1rem 1.25rem 1.25rem;
+}
+
+#variants-header {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+#variants-subject {
+    color: $default-dim;
+    font-size: 0.82rem;
+
+    span {
+        color: $default-faint;
+    }
+}
+
+#variants-explainer {
+    color: $default-faint;
+    font-size: 0.76rem;
+}
+
+.variants-hint {
+    color: $default-faint;
+    font-size: 0.8rem;
+}
+
+#variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    overflow-y: auto;
+}
+
+.variant-row {
+    align-items: center;
+    border-radius: $default-border-radius-small;
+    cursor: grab;
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.4rem 0.5rem;
+
+    &:hover {
+        background-color: $default-hover;
+    }
+
+    &.current {
+        background-color: $default-green-soft;
+    }
+}
+
+.variant-cover {
+    border-radius: 0.2rem;
+    flex-shrink: 0;
+    height: 2.25rem;
+    object-fit: cover;
+    width: 2.25rem;
+
+    &.placeholder {
+        align-items: center;
+        background-color: $default-elevated;
+        color: $default-faint;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.variant-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.variant-album {
+    align-items: center;
+    display: flex;
+    gap: 0.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.album-type-tag {
+    border: 1px solid $default-border;
+    border-radius: 0.2rem;
+    color: $default-faint;
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    padding: 0 0.25rem;
+    text-transform: uppercase;
+}
+
+.variant-meta {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.variant-duration {
+    color: $default-faint;
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.current-tag {
+    color: $default-green;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+}

@@ -1,0 +1,38 @@
+/**
+ * Copyright (c) 2026. All rights reserved.
+ *
+ * Spotify Library Manager
+ * Application shell layout: sidebar, content area and docked chat panel.
+ */
+
+#client {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+#content {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+    position: relative;
+}
+
+#chat-toggle {
+    bottom: 1.25rem;
+    position: fixed;
+    right: 1.25rem;
+    z-index: 40;
+}
+
+#client-loading {
+    background-color: rgba(13, 15, 20, 0.75);
+    color: $default-dim;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 50;
+}

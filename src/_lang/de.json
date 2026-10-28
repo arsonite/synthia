@@ -1,0 +1,256 @@
+{
+    "client": {
+        "library-failed": "Die Bibliothek konnte nicht geladen werden. Verbindung prüfen und erneut versuchen.",
+        "loading-library": "Bibliothek wird geladen ...",
+        "open-chat": "Assistenten öffnen"
+    },
+    "login": {
+        "title": "Spotify Library Manager",
+        "subtitle": "Eigene Bibliothek organisieren: virtuelle Ordner, Massenaktionen, Release-Daten und ein Wochenarchiv.",
+        "client-id-label": "Spotify Client-ID",
+        "client-id-placeholder": "z. B. 4c1f8a2be9d34e0f...",
+        "client-id-hint": "Im Spotify Developer Dashboard eine App anlegen und deren Client-ID hier einfügen. Sie wird nur lokal gespeichert.",
+        "client-id-missing": "Bitte zuerst eine Client-ID eintragen.",
+        "redirect-hint": "Diese Redirect-URI im Dashboard hinterlegen:",
+        "connect-button": "Spotify-Konto verbinden",
+        "login-failed": "Der Login konnte nicht gestartet werden."
+    },
+    "callback": {
+        "connecting": "Verbindung wird abgeschlossen ...",
+        "denied": "Der Zugriff wurde abgelehnt.",
+        "exchange-failed": "Der Autorisierungscode konnte nicht eingelöst werden."
+    },
+    "home": {
+        "welcome": "Hallo {{name}}",
+        "subtitle": "Deine Bibliothek auf einen Blick.",
+        "stats": {
+            "playlists": "Playlists",
+            "own": "Eigene",
+            "public": "Öffentlich",
+            "folders": "Ordner"
+        },
+        "dw": {
+            "title": "Discover Weekly archivieren",
+            "description-text": "Kopiert die aktuelle Discover Weekly in eine nach Kalenderwoche benannte Playlist und legt sie in \"{{folder}}\" ab.",
+            "button": "Jetzt archivieren",
+            "archiving": "Wird archiviert ...",
+            "archived": "{{name}} mit {{count}} Titeln erstellt.",
+            "already-archived": "{{name}} existiert bereits, nichts zu tun.",
+            "failed": "Das Archivieren ist fehlgeschlagen.",
+            "description": "Archiviert aus {{source}} durch den Spotify Library Manager.",
+            "source-not-found": "Discover Weekly wurde nicht in der Bibliothek gefunden. Bitte in den Einstellungen eine Quell-Playlist-ID hinterlegen.",
+            "source-empty": "Die Quell-Playlist enthält keine abspielbaren Titel.",
+            "override-failed": "Die konfigurierte Quell-Playlist konnte nicht geladen werden (Status {{status}})."
+        },
+        "limitations": {
+            "title": "Zwei Dinge, die die Spotify-API nicht kann",
+            "folders": "Spotify bietet keine öffentlichen Endpunkte für Playlist-Ordner oder die Reihenfolge in der Seitenleiste. Ordner und die eigene Sortierung liegen deshalb lokal im Browser und sind in den Spotify-Clients nicht sichtbar.",
+            "dw": "Seit Ende 2024 sind algorithmische Playlists wie Discover Weekly nur noch für Apps mit genehmigter Quota-Erweiterung zugänglich. Meldet der Archivlauf eine fehlende Quelle, in den Einstellungen eine eigene Spiegel-Playlist hinterlegen."
+        },
+        "settings": {
+            "title": "Einstellungen",
+            "language": "Sprache",
+            "dw-source": "Discover-Weekly-Quell-ID",
+            "dw-source-placeholder": "Playlist-ID (optional)",
+            "dw-source-hint": "Optionaler Ersatz, falls Discover Weekly über die API nicht lesbar ist.",
+            "ws-url": "WebSocket-URL des Assistenten",
+            "account": "Konto",
+            "logout": "Verbindung trennen"
+        }
+    },
+    "sidebar": {
+        "title": "Deine Bibliothek",
+        "loading": "Playlists werden geladen ...",
+        "filter-placeholder": "Playlists filtern",
+        "filter-empty": "Keine Playlist passt zum Filter.",
+        "root-dropzone": "Hier ablegen, um auf die oberste Ebene zu verschieben",
+        "select-tooltip": "Für Massenaktionen auswählen",
+        "drag-subtitle": "{{count}} Titel",
+        "actions": {
+            "archive-dw": "Discover Weekly archivieren",
+            "new-folder": "Neuer Ordner",
+            "refresh": "Bibliothek neu laden"
+        },
+        "folder": {
+            "new-name": "Neuer Ordner",
+            "delete-tooltip": "Ordner löschen",
+            "delete-header": "Ordner löschen",
+            "delete-body": "\"{{name}}\" wird entfernt. Die enthaltenen Playlists rücken eine Ebene nach oben und bleiben in Spotify erhalten."
+        }
+    },
+    "playlist": {
+        "loading": "Titel werden geladen ...",
+        "empty": "Diese Playlist enthält keine Titel.",
+        "load-failed": "Die Playlist konnte nicht geladen werden.",
+        "public": "Öffentlich",
+        "private": "Privat",
+        "by-owner": "von {{owner}}",
+        "track-count": "{{count}} Titel",
+        "local": "Lokal",
+        "row-tooltip": "Klicken für weitere Veröffentlichungen, Ziehen in den Assistenten",
+        "refresh": "Titel neu laden",
+        "open-in-spotify": "In Spotify öffnen",
+        "toggle-direction": "Sortierrichtung umkehren",
+        "apply-order": "Reihenfolge schreiben",
+        "applying-order": "Wird geschrieben ...",
+        "apply-order-tooltip": "Aktuelle Sortierung zurück nach Spotify schreiben",
+        "apply-order-header": "Reihenfolge nach Spotify schreiben",
+        "apply-order-body": "Die Titelreihenfolge von \"{{name}}\" wird mit der aktuellen Sortierung überschrieben. Das lässt sich nicht rückgängig machen.",
+        "order-applied": "Die Reihenfolge wurde nach Spotify geschrieben.",
+        "order-failed": "Die Reihenfolge konnte nicht geschrieben werden.",
+        "order-skipped-local": "{{count}} lokale Dateien wurden übersprungen, die API kann sie nicht neu hinzufügen.",
+        "columns": {
+            "title": "Titel",
+            "album": "Album",
+            "release": "Release",
+            "added": "Hinzugefügt",
+            "duration": "Dauer"
+        },
+        "sort": {
+            "custom": "Eigene Reihenfolge",
+            "title": "Titel",
+            "artist": "Künstler",
+            "album": "Album",
+            "release-date": "Release-Datum",
+            "added": "Hinzugefügt am",
+            "duration": "Dauer",
+            "popularity": "Popularität"
+        },
+        "precision": {
+            "day": "Exaktes Datum",
+            "month": "Nur Monat",
+            "year": "Nur Jahr",
+            "unknown": "Kein Datum"
+        },
+        "order-applied-with-backup": "Die Reihenfolge wurde nach Spotify geschrieben, ein Backup der vorherigen liegt auf der Startseite.",
+        "order-failed-restorable": "Das Schreiben ist fehlgeschlagen, die Playlist kann unvollständig sein. Snapshot auf der Startseite wiederherstellen."
+    },
+    "variants": {
+        "title": "Weitere Veröffentlichungen",
+        "close": "Schließen",
+        "explainer": "Singles, Alben, Remaster und Compilations dieses Titels. Grüne Chips haben ein exaktes Datum, gelbe nur einen Monat, graue nur ein Jahr. Beim Ersetzen bleibt die Position in der Playlist erhalten.",
+        "loading": "Veröffentlichungen werden gesucht ...",
+        "empty": "Es wurden keine weiteren Veröffentlichungen gefunden.",
+        "search-failed": "Die Suche ist fehlgeschlagen.",
+        "current": "In Playlist",
+        "replace": "Übernehmen",
+        "replacing": "Wird ersetzt ...",
+        "replace-tooltip": "Titel in dieser Playlist durch diese Veröffentlichung ersetzen",
+        "replaced": "Ersetzt, das Release-Datum ist jetzt {{date}}.",
+        "replace-failed": "Der Titel konnte nicht ersetzt werden.",
+        "precision": {
+            "day": "Exaktes Datum",
+            "month": "Nur Monat",
+            "year": "Nur Jahr",
+            "unknown": "Kein Datum"
+        },
+        "album-type": {
+            "album": "Album",
+            "single": "Single",
+            "compilation": "Compilation",
+            "appears_on": "Erscheint auf"
+        },
+        "replace-failed-restorable": "Der Titel konnte nicht ersetzt werden. Wirkt die Playlist falsch, den Snapshot auf der Startseite wiederherstellen."
+    },
+    "toolbar": {
+        "selected": "{{count}} ausgewählt",
+        "clear": "Auswahl aufheben",
+        "make-public": "Öffentlich",
+        "make-private": "Privat",
+        "move-to-folder": "Verschieben",
+        "made-public": "{{count}} Playlists sind jetzt öffentlich.",
+        "made-private": "{{count}} Playlists sind jetzt privat.",
+        "skipped-not-owned": "{{count}} Playlists wurden übersprungen, sie gehören jemand anderem.",
+        "visibility-failed": "\"{{name}}\" konnte nicht geändert werden.",
+        "visibility-backup-label": "Sichtbarkeit von {{count}} Playlists"
+    },
+    "folder-picker": {
+        "header": "In Ordner verschieben",
+        "root": "Oberste Ebene",
+        "new-folder-placeholder": "Name des neuen Ordners",
+        "create-tooltip": "Ordner erstellen",
+        "cancel": "Abbrechen",
+        "move-here": "Hierhin verschieben"
+    },
+    "chat": {
+        "title": "Assistent",
+        "connect": "Verbinden",
+        "connecting": "Verbinde",
+        "disconnect": "Trennen",
+        "close": "Schließen",
+        "send": "Senden",
+        "ws-url": "WebSocket-URL",
+        "settings-tooltip": "Verbindungseinstellungen",
+        "input-placeholder": "Frage stellen, Enter sendet, Shift plus Enter für neue Zeile",
+        "empty-title": "Noch keine Nachrichten",
+        "empty-hint": "Playlists, Titel oder Veröffentlichungen hierher ziehen, um deren Metadaten anzuhängen.",
+        "not-connected": "Keine Verbindung zu einem Backend.",
+        "send-failed": "Die Nachricht konnte nicht gesendet werden.",
+        "backend-error": "Backend-Fehler: {{text}}",
+        "status": {
+            "disconnected": "Offline",
+            "connecting": "Verbinde",
+            "connected": "Online"
+        },
+        "attachment": {
+            "load-failed": "Die Metadaten für \"{{name}}\" konnten nicht geladen werden."
+        }
+    },
+    "popup": {
+        "cancel": "Abbrechen",
+        "confirm": "Bestätigen",
+        "close": "Schließen"
+    },
+    "backup": {
+        "title": "Backup und Wiederherstellung",
+        "description": "Vor jedem schreibenden Zugriff wird automatisch ein Snapshot der betroffenen Playlists angelegt. Lade zusätzlich ein vollständiges Backup herunter, denn der Ordnerbaum liegt nur in diesem Browser.",
+        "download": "Vollständiges Backup laden",
+        "restore-from-file": "Aus Datei wiederherstellen",
+        "downloaded": "Backup mit {{count}} Playlists heruntergeladen.",
+        "download-failed": "Das Backup konnte nicht erstellt werden.",
+        "file-invalid": "Diese Datei ist kein Backup dieser App.",
+        "preview-failed": "Der Abgleich mit der Bibliothek ist fehlgeschlagen.",
+        "restore": "Wiederherstellen",
+        "restore-tooltip": "Diesen Snapshot zurück nach Spotify schreiben",
+        "save-tooltip": "Diesen Snapshot als Datei sichern",
+        "delete-tooltip": "Diesen Snapshot löschen",
+        "restored": "{{playlists}} Playlists und {{tracks}} Titel wiederhergestellt.",
+        "restored-skipped-local": "{{count}} lokale Dateien konnten von der API nicht neu hinzugefügt werden.",
+        "restore-failed": "Die Wiederherstellung ist fehlgeschlagen.",
+        "restore-entry-failed": "\"{{name}}\" wurde nicht wiederhergestellt ({{message}}).",
+        "automatic-title": "Automatische Snapshots",
+        "automatic-hint": "Die letzten 20 Snapshots bleiben in diesem Browser. Wichtige als Datei sichern.",
+        "automatic-empty": "Noch keine Snapshots, sie entstehen beim ersten Schreibzugriff.",
+        "snapshot-size": "{{playlists}} Playlists, {{tracks}} Titel",
+        "reason": {
+            "order-write": "Reihenfolge",
+            "track-replace": "Titeltausch",
+            "visibility": "Sichtbarkeit",
+            "pre-restore": "Vor Restore",
+            "manual": "Manuell"
+        },
+        "state": {
+            "same": "Unverändert",
+            "changed": "Abweichend",
+            "missing": "Fehlt"
+        },
+        "counts": {
+            "tracks": "{{live}} jetzt, {{backup}} im Backup",
+            "missing": "nicht in der Bibliothek"
+        },
+        "working": {
+            "capturing": "Playlists werden gelesen, {{done}} von {{total}} ...",
+            "comparing": "Abgleich mit der Bibliothek ...",
+            "restoring": "Wiederherstellung {{done}} von {{total}} ..."
+        },
+        "confirm": {
+            "header": "Backup wiederherstellen",
+            "body": "\"{{label}}\" wird zurück nach Spotify geschrieben. Als abweichend markierte Playlists werden mit der gesicherten Reihenfolge überschrieben.",
+            "note": "Vorher wird ein Snapshot des aktuellen Stands angelegt, diese Wiederherstellung lässt sich also ebenfalls rückgängig machen. Lokale Dateien können nicht neu hinzugefügt werden, wiederhergestellte Titel gelten als heute hinzugefügt."
+        },
+        "delete": {
+            "header": "Snapshot löschen",
+            "body": "Der Snapshot \"{{label}}\" wird entfernt. Spotify bleibt unberührt."
+        }
+    }
+}

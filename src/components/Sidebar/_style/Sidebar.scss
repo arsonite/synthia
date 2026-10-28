@@ -1,0 +1,243 @@
+/**
+ * Copyright (c) 2026. All rights reserved.
+ *
+ * Spotify Library Manager
+ */
+
+#sidebar {
+    background-color: $default-panel;
+    border-right: 1px solid $default-border;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    height: 100%;
+    width: $default-sidebar-width;
+}
+
+#sidebar-brand {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-family: $default-font-display;
+    font-weight: 600;
+    gap: 0.6rem;
+    padding: 1rem;
+
+    .icon-spotify {
+        color: $default-green;
+    }
+}
+
+#sidebar-actions {
+    align-items: center;
+    border-bottom: 1px solid $default-border;
+    display: flex;
+    gap: 0.15rem;
+    padding: 0 0.6rem 0.75rem;
+}
+
+#sidebar-filter {
+    align-items: center;
+    background-color: $default-elevated;
+    border: 1px solid $default-border;
+    border-radius: $default-border-radius-small;
+    color: $default-faint;
+    display: flex;
+    flex: 1;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0 0.45rem;
+
+    input {
+        background: none;
+        border: none;
+        flex: 1;
+        min-width: 0;
+        padding: 0.3rem 0;
+    }
+}
+
+#sidebar-filter-clear {
+    cursor: pointer;
+    display: flex;
+
+    &:hover {
+        color: $default-white;
+    }
+}
+
+#sidebar-tree {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem 0.4rem 2rem;
+
+    &.drop-on-root #sidebar-root-dropzone {
+        border-color: $default-blue;
+        color: $default-blue;
+    }
+}
+
+.sidebar-hint {
+    color: $default-faint;
+    font-size: 0.8rem;
+    padding: 0.75rem;
+}
+
+#sidebar-root-dropzone {
+    border: 1px dashed $default-border;
+    border-radius: $default-border-radius-small;
+    color: $default-faint;
+    font-size: 0.72rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    transition:
+        border-color $default-transition,
+        color $default-transition;
+}
+
+.tree-row {
+    align-items: center;
+    border-radius: $default-border-radius-small;
+    cursor: pointer;
+    display: flex;
+    gap: 0.45rem;
+    height: 2.15rem;
+    padding-right: 0.45rem;
+    position: relative;
+    transition: background-color $default-transition;
+    user-select: none;
+
+    &:hover {
+        background-color: $default-hover;
+    }
+
+    &.active {
+        background-color: $default-hover;
+        box-shadow: inset 0.15rem 0 0 $default-green;
+    }
+
+    &.selected {
+        background-color: $default-green-soft;
+    }
+
+    // Drop indicators
+    &.drop-before::before,
+    &.drop-after::after {
+        background-color: $default-blue;
+        content: '';
+        height: 2px;
+        left: 0.25rem;
+        position: absolute;
+        right: 0.25rem;
+    }
+
+    &.drop-before::before {
+        top: -1px;
+    }
+
+    &.drop-after::after {
+        bottom: -1px;
+    }
+
+    &.drop-inside {
+        box-shadow: inset 0 0 0 1px $default-blue;
+    }
+
+    .row-name {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .row-cover {
+        border-radius: 0.2rem;
+        flex-shrink: 0;
+        height: 1.5rem;
+        object-fit: cover;
+        width: 1.5rem;
+
+        &.placeholder {
+            align-items: center;
+            background-color: $default-elevated;
+            color: $default-faint;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .row-checkbox {
+        align-items: center;
+        border: 1px solid $default-border;
+        border-radius: 0.25rem;
+        display: flex;
+        flex-shrink: 0;
+        height: 0.95rem;
+        justify-content: center;
+        width: 0.95rem;
+
+        &:hover {
+            border-color: $default-green;
+        }
+
+        &.checked {
+            background-color: $default-green;
+            border-color: $default-green;
+            color: $default-black;
+        }
+    }
+
+    .row-visibility {
+        color: $default-faint;
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .row-owner-tag {
+        color: $default-faint;
+        flex-shrink: 0;
+        font-size: 0.68rem;
+        max-width: 5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .row-chevron,
+    .row-folder-icon {
+        color: $default-dim;
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .row-count {
+        color: $default-faint;
+        font-size: 0.7rem;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .row-action {
+        color: $default-faint;
+        display: none;
+
+        &:hover {
+            color: $default-red;
+        }
+    }
+
+    &:hover .row-action {
+        display: flex;
+    }
+
+    .row-rename-input {
+        flex: 1;
+        min-width: 0;
+        padding: 0.15rem 0.35rem;
+    }
+}
+
+.folder-row {
+    font-weight: 500;
+}
